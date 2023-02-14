@@ -1,0 +1,109 @@
+header{
+    display: flex;
+    height: 148px;
+    background-color: #fefefe;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    min-height: 70px;
+}
+a{
+    text-decoration: none;
+    color: #febbbe;
+    font-family: "Chelsea Market", cursive;
+    font-weight: bold;
+}
+h2{
+    font-family: "Sniglet", cursive;
+    color: #f04804;
+    font-size: 6rem;
+    text-align: center;
+
+}
+h3{
+    font-family: "Nerko One", cursive;
+    color: #4a5974;
+    font-size: 3rem;
+    text-align: center;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+th{
+    font-family: "Sniglet", cursive;
+    color: #606c8c;
+    font-size: 2rem;
+    text-align: center;
+    padding: 50px;
+}
+td{
+    font-family: "Sniglet", cursive;
+    color: #606c8c;
+    font-size: 1.5rem;
+    text-align: center;
+}
+p{
+    font-family: "Inconsolata", cursive;
+    color: #febbbe;
+    font-size: 1.6rem;
+    text-align: center;
+}
+.blancobg{
+    background-color: #fefefe;
+}
+.blancobg img{
+    width: 450px;
+}
+img{
+    width: 200px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+nav a{
+    font-weight: 600px;
+    margin-right: 100px;
+}
+
+nav a:hover{
+    color: #f9d8d8;
+}
+
+body{
+    background-color: #f1f1f1;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+}
+.log{
+    display: flex;
+    align-items: center;
+}
+.log img{
+    height: 100px;
+    width: 100px;
+    margin-left: 10px;
+}
+
+.centimage{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+@media(max-width: 768px){
+    header{
+        flex-direction: column;
+    }
+    nav{
+        padding: 10px 0px;
+    }
+}
