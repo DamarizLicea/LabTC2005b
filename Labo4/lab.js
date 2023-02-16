@@ -35,7 +35,7 @@ let cantidad_alitas = () => {
   return 12;
 };
 
-
+/*
 
  let boton = document.getElementById("boton");
  boton.innerHTML = "Click aquí";
@@ -45,7 +45,7 @@ let cantidad_alitas = () => {
         console.log(contadorclicks);
         document.getElementById("clicks").innerHTML = contadorclicks;
     }
-
+*/
 
 /*arreglo, que es un apuntador y solo guarda la localidad ded memoria*/
 const arreglo = ["elemento1", "elemento2", "elemento3"];
@@ -92,8 +92,53 @@ function sqcubes(pr1) {
     accum = num + 1;
 
     document.write(
-      "El cuadrado de " + num + " es " + sq + "  el cubo es: " + cu + "<br>"
+     /* "<table>"+num+" "+sq+" "+cu+"</table>"*/
+    /*  "<table><tr><th>" + "Normal" + "</th><th>" + "Cuadrado" + "</th><th>" + "Cubo" + "</th></tr>"+ "<tr><td>"+ num + + sq + cu + "</td></tr></table>"*/
+    "<table><th>"+ "Normal" +"</th><th>"+ "Cuadrado"+ "</th><th>"+ "Cubo" + "</th><tr><td>"+ num + "</td><td>" + sq + "</td><td>" + cu + "</td></tr></table>"
+
     );
   }
 }
 sqcubes(pr1);
+
+
+let r1 = Math.random();
+let r2 = Math.random();
+
+function ej2(r1,r2){
+  let stDate = Date.now();
+  let suma = r1 + r2;
+  let resultado = prompt("¿Cuánto es " + r1 + " + " + r2 + "?");
+  let end = Date.now();
+  let tpasado = (end - stDate)/1000;
+  if (resultado == suma) {
+    alert("Correcto");
+  } else {
+    alert("Incorrecto");
+  }
+  alert("Tu tiempo fue de " + tpasado + " segundos")
+}
+ej2(r1,r2);
+
+
+let array = [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 0, 0];
+
+function contador(array){
+  let ceros = 0;
+  let positivos = 0;
+  let negativos = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] == 0) {
+      ceros++;
+    } else if (array[i] > 0) {
+      positivos++;
+    } else {
+      negativos++;
+    }
+  }
+  document.write("<br> <br> <br> SEl arreglo es: " + array + "<br>");
+  document.write("Hay " + ceros + " ceros, " + positivos + " positivos y " + negativos + " negativos");
+
+}
+
+contador(array);
