@@ -91,35 +91,34 @@ function sqcubes(pr1) {
     cu = num * num * num;
     accum = num + 1;
 
-    document.write(
+    /*document.write(*/
      /* "<table>"+num+" "+sq+" "+cu+"</table>"*/
     /*  "<table><tr><th>" + "Normal" + "</th><th>" + "Cuadrado" + "</th><th>" + "Cubo" + "</th></tr>"+ "<tr><td>"+ num + + sq + cu + "</td></tr></table>"*/
-    "<table><th>"+ "Normal" +"</th><th>"+ "Cuadrado"+ "</th><th>"+ "Cubo" + "</th><tr><td>"+ num + "</td><td>" + sq + "</td><td>" + cu + "</td></tr></table>"
-
-    );
+   /* "<table><th>"+ "Normal" +"</th><th>"+ "Cuadrado"+ "</th><th>"+ "Cubo" + "</th><tr><td>"+ num + "</td><td>" + sq + "</td><td>" + cu + "</td></tr></table>");*/
+    
+   document.getElementById("tabla").innerHTML += "<tr><td>"+ num + "</td><td>" + sq + "</td><td>" + cu + "</td></tr>";
+    
   }
 }
 sqcubes(pr1);
 
 
-let r1 = Math.random();
-let r2 = Math.random();
+let r1 =Math.floor(Math.random() * 10);
+let r2 = Math.floor(Math.random() * 10);
+let suma = r1 + r2;
+document.getElementById("randtable").innerHTML += "<tr><td>"+ r1 + "</td><td>" + r2 + "</td></tr>";
+let stDate = Date.now();
 
-function ej2(r1,r2){
-  let stDate = Date.now();
-  let suma = r1 + r2;
-  let resultado = prompt("¿Cuánto es " + r1 + " + " + r2 + "?");
+function ej2(){
+  let resultado = document.getElementById("respuesta").value;
   let end = Date.now();
   let tpasado = (end - stDate)/1000;
   if (resultado == suma) {
-    alert("Correcto");
+    document.getElementById("respejer2").innerHTML = "Correcto" + "<br> <br> <br> El tiempo que tardaste fue de: " + tpasado + " segundos";
   } else {
-    alert("Incorrecto");
+    document.getElementById("respejer2").innerHTML = "Incorrecto" + "<br> <br> <br> El tiempo que tardaste fue de: " + tpasado + " segundos";
   }
-  alert("Tu tiempo fue de " + tpasado + " segundos")
 }
-ej2(r1,r2);
-
 
 let array = [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 0, 0];
 
@@ -136,9 +135,23 @@ function contador(array){
       negativos++;
     }
   }
-  document.write("<br> <br> <br> SEl arreglo es: " + array + "<br>");
+  document.write("<br> <br> <br> El arreglo es: " + array + "<br>");
   document.write("Hay " + ceros + " ceros, " + positivos + " positivos y " + negativos + " negativos");
 
 }
 
 contador(array);
+
+
+function numReverse(){
+  let num = document.getElementById("numRev").value;
+  let reverse = num.split("").reverse().join("");
+  document.write("<br> <br> <br> El número " + num + " al revés es " + reverse);
+}
+
+numReverse();
+
+document.getElementById("boton2").onclick = (e) => {
+  e.preventDefault();
+  ej2(r1,r2);
+}
