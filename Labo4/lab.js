@@ -78,9 +78,15 @@ for (let atributo in objeto) {
   console.log(atributo);
 }
 
+
+
+/*funciones*/
 /*aquí empieza el laboratorio de javascript*/
-let pr1 = prompt("Dame un número: ");
-function sqcubes(pr1) {
+
+
+let pr1 = document.getElementById("numero1").value;
+console.log(pr1);
+function sqcubes() {
   for (let i = 1; i <= pr1; i++) {
     let num = i;
     let sq = 0;
@@ -100,7 +106,6 @@ function sqcubes(pr1) {
     
   }
 }
-sqcubes(pr1);
 
 
 let r1 =Math.floor(Math.random() * 10);
@@ -121,6 +126,7 @@ function ej2(){
 }
 
 let array = [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 0, 0];
+document.getElementById("arreglo").innerHTML = array;
 
 function contador(array){
   let ceros = 0;
@@ -135,23 +141,59 @@ function contador(array){
       negativos++;
     }
   }
-  document.write("<br> <br> <br> El arreglo es: " + array + "<br>");
-  document.write("Hay " + ceros + " ceros, " + positivos + " positivos y " + negativos + " negativos");
+
+  document.getElementById("respejer3").innerHTML = "Hay " + ceros + " ceros, " + positivos + " positivos y " + negativos + " negativos";
 
 }
 
 contador(array);
 
 
+
+/*ingresar una matriz y sacar promedio por renglon*/
+let matriz = [[1,2,3,4,5],[6,7,8,9,10],[11,12,13,14,15],[16,17,18,19,20]];
+document.getElementById("matr").innerHTML = "La matriz es: " + matriz + "<br>";
+function ej4(matriz){
+let promedio = 0;
+let acumulador = 0;
+let contador = 0;
+for (let i = 0; i < matriz.length; i++) {
+  for (let j = 0; j < matriz[i].length; j++) {
+    acumulador += matriz[i][j];
+    contador++;
+  }
+  promedio = acumulador/contador;
+  document.getElementById("respejer4.1").innerHTML += "El renglón " + (i+1) + " es " + matriz[i] + "<br>";
+  document.getElementById("respejer4").innerHTML += "El promedio del renglón " + (i+1) + " es " + promedio + "<br>";
+  acumulador = 0;
+  contador = 0;
+  promedio = 0;
+}
+}
+ej4(matriz);
+
+
+
 function numReverse(){
   let num = document.getElementById("numRev").value;
   let reverse = num.split("").reverse().join("");
-  document.write("<br> <br> <br> El número " + num + " al revés es " + reverse);
+  document.getElementById("respejer5").innerHTML = "El número " + num + " al revés es " + reverse;
 }
 
 numReverse();
 
+
+document.getElementById("boton1").onclick = (e) => {
+  e.preventDefault();
+  sqcubes();
+}
+
 document.getElementById("boton2").onclick = (e) => {
   e.preventDefault();
   ej2(r1,r2);
+}
+
+document.getElementById("boton5").onclick = (e) => {
+  e.preventDefault();
+  numReverse();
 }
