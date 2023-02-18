@@ -3,86 +3,115 @@
   <head>
     <meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″ />
     <title>Laboratorio JavaScript</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
   </head>
   <body>
-    <h1>Laboratorio 4 JS</h1>
-    <p>Ejercicios:</p>
-    <!-- <button id="boton"></button>
+    <div class="columns">
+      <div class="column is-three-fifths is-offset-one-fifth">
+      <h1 class="title is-1">LABORATORIO 4 DE JS Y 5 FRAMEWORKS</h1>
+      <p class="subtitle is-3">Ejercicio 1</p>
+      <!-- <button id="boton"></button>
     <div id="clicks"> 0 </div>-->
-    <div id="ejerc1">
-      
-      <p>Ingresa un número hasta el que vamos a sacar cubo y cuadrado: </p>
-      <form>
-        <label for="numero1">Número: </label><br />
-        <input type="text" id="numero1" name="numero1" /><br />
-        <button id="boton1">Enviar</button>
-      <table id="tabla">
-        <tr>
-          <th>Normal</th>
-          <th>Cuadrado</th>
-          <th>Cubo</th>
-        </tr>
-      </table>
-    </div>
-    <br />
-    <br />
-    <br />
-    <div id="ejerc2.1">
-      <p>Ejercicio 2</p>
-      <p>¿Cuál es la suma de éstos dos numeros aleatorios?</p>
-      <table id="randtable">
-        <tr>
-          <th>Numero 1</th>
-          <th>Numero 2</th>
-        </tr>
-      </table>
+      <div id="ejerc1">
+        <p>Ingresa un número hasta el que vamos a sacar cubo y cuadrado:</p>
+        <form>
+          <label for="numero1">Número: </label><br />
+          <input
+            class="input is-rounded"
+            type="text"
+            id="numero1"
+            name="numero1"
+          /><br />
+          <button id="boton1" class="button is-info is-rounded">Enviar</button>
+        </form>
+        <br />
+        <br />
+        <br />
+        <table class = "table is-bordered is-striped is-narrow is-hoverable is-fullwidth" id="tabla">
+          <tr>
+            <th>Normal</th>
+            <th>Cuadrado</th>
+            <th>Cubo</th>
+          </tr>
+        </table>
+      </div>
       <br />
       <br />
-      <form>
-        <label for="respuesta">Respuesta: </label><br />
-        <input type="text" id="respuesta" name="respuesta" /><br />
-        <button id="boton2">Enviar</button>
-      </form>
-    </div>
-    <div id="ejerc2.2">
-      <p id="respejer2"></p>
-    <br />
-    <br />
-    <br />
-    <div id="ejerc3">
-      <p>Ejercicio 3</p>
-      <p>El arreglo para sacar positivos, negativos y 0's es: </p>
-      <p id="arreglo"></p>
-      <p id="respejer3"></p>
-    </div>
-    <br>
-    <br>
-    <br>
-    <div id="ejerc4">
-      <p>Ejercicio 4</p>
-      <p id="matr"></p>
-     <!-- <form>
+      <br />
+      <div id="ejerc2.1">
+        <p class="subtitle is-3">Ejercicio 2</p>
+        <p>¿Cuál es la suma de éstos dos numeros aleatorios?</p>
+        <table class = "table is-bordered is-striped is-narrow is-hoverable is-fullwidth" id="randtable">
+          <tr>
+            <th>Numero 1</th>
+            <th>Numero 2</th>
+          </tr>
+        </table>
+        <br />
+        <br />
+        <form>
+          <label for="respuesta">Respuesta: </label><br />
+          <input
+            class="input is-rounded"
+            type="text"
+            id="respuesta"
+            name="respuesta"
+          /><br />
+          <button id="boton2" class="button is-info is-rounded">Enviar</button>
+        </form>
+      </div>
+      <div id="ejerc2.2">
+        <p id="respejer2"></p>
+        <br />
+        <br />
+        <br />
+        <div id="ejerc3">
+          <p class="subtitle is-3">Ejercicio 3</p>
+          <p>El arreglo para sacar positivos, negativos y 0's es:</p>
+          <p id="arreglo"></p>
+          <p id="respejer3"></p>
+        </div>
+        <br />
+        <br />
+        <br />
+        <div id="ejerc4">
+          <p class="subtitle is-3">Ejercicio 4</p>
+          <p id="matr"></p>
+          <!-- <form>
         <label for="numero4">Número: </label><br />
         <input type="text" id="numero4" name="numero4" /><br />
         <button id="boton4">Enviar</button>
       </form>-->
-      <p id="respejer4.1"></p>
-      <p id="respejer4"></p>
+          <p id="respejer4.1"></p>
+          <p id="respejer4"></p>
+        </div>
+        <br />
+        <br />
+        <br />
+        <div id="ejerc5">
+          <p class="subtitle is-3">Ejercicio 5</p>
+          <p>Ingresa un numero para revertirlo:</p>
+          <form>
+            <label for="numRev">Número: </label><br />
+            <input
+              class="input is-rounded"
+              type="text"
+              id="numRev"
+              name="numRev"
+            /><br />
+            <button id="boton5" class="button is-info is-rounded">
+              Enviar
+            </button>
+          </form>
+        </div>
+        <div id="ejerc5.2">
+          <p id="respejer5"></p>
+        </div>
+      </div>
     </div>
-    <br>
-    <br>
-    <br>
-    <div id="ejerc5">
-      <p>Ejercicio 5</p>
-      <p>Ingresa un numero para revertirlo:  </p>
-      <form>
-        <label for="numRev">Número: </label><br />
-        <input type="text" id="numRev" name="numRev" /><br />
-        <button id="boton5">Enviar</button>
-      </form>
-    </div>
-    <div id="ejerc5.2">
-      <p id="respejer5"></p>
     </div>
     <script src="lab.js"></script>
     <!--- Aquí se incluye el archivo JavaScript-->

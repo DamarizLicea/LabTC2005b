@@ -78,15 +78,11 @@ for (let atributo in objeto) {
   console.log(atributo);
 }
 
-
-
 /*funciones*/
 /*aquí empieza el laboratorio de javascript*/
 
-
-let pr1 = document.getElementById("numero1").value;
-console.log(pr1);
 function sqcubes() {
+  let pr1 = document.getElementById("numero1").value;
   for (let i = 1; i <= pr1; i++) {
     let num = i;
     let sq = 0;
@@ -98,37 +94,48 @@ function sqcubes() {
     accum = num + 1;
 
     /*document.write(*/
-     /* "<table>"+num+" "+sq+" "+cu+"</table>"*/
+    /* "<table>"+num+" "+sq+" "+cu+"</table>"*/
     /*  "<table><tr><th>" + "Normal" + "</th><th>" + "Cuadrado" + "</th><th>" + "Cubo" + "</th></tr>"+ "<tr><td>"+ num + + sq + cu + "</td></tr></table>"*/
-   /* "<table><th>"+ "Normal" +"</th><th>"+ "Cuadrado"+ "</th><th>"+ "Cubo" + "</th><tr><td>"+ num + "</td><td>" + sq + "</td><td>" + cu + "</td></tr></table>");*/
-    
-   document.getElementById("tabla").innerHTML += "<tr><td>"+ num + "</td><td>" + sq + "</td><td>" + cu + "</td></tr>";
-    
+    /* "<table><th>"+ "Normal" +"</th><th>"+ "Cuadrado"+ "</th><th>"+ "Cubo" + "</th><tr><td>"+ num + "</td><td>" + sq + "</td><td>" + cu + "</td></tr></table>");*/
+
+    document.getElementById("tabla").innerHTML +=
+      "<tr><td>" + num + "</td><td>" + sq + "</td><td>" + cu + "</td></tr>";
   }
 }
 
-
-let r1 =Math.floor(Math.random() * 10);
+let r1 = Math.floor(Math.random() * 10);
 let r2 = Math.floor(Math.random() * 10);
 let suma = r1 + r2;
-document.getElementById("randtable").innerHTML += "<tr><td>"+ r1 + "</td><td>" + r2 + "</td></tr>";
+document.getElementById("randtable").innerHTML +=
+  "<tr><td>" + r1 + "</td><td>" + r2 + "</td></tr>";
 let stDate = Date.now();
 
-function ej2(){
+function ej2() {
   let resultado = document.getElementById("respuesta").value;
   let end = Date.now();
-  let tpasado = (end - stDate)/1000;
+  let tpasado = (end - stDate) / 1000;
   if (resultado == suma) {
-    document.getElementById("respejer2").innerHTML = "Correcto" + "<br> <br> <br> El tiempo que tardaste fue de: " + tpasado + " segundos";
+    document.getElementById("respejer2").innerHTML =
+      "Correcto" +
+      "<br> <br> <br> El tiempo que tardaste fue de: " +
+      tpasado +
+      " segundos";
   } else {
-    document.getElementById("respejer2").innerHTML = "Incorrecto" + "<br> <br> <br> El tiempo que tardaste fue de: " + tpasado + " segundos";
+    document.getElementById("respejer2").innerHTML =
+      "Incorrecto" +
+      "<br> <br> <br> El tiempo que tardaste fue de: " +
+      tpasado +
+      " segundos";
   }
 }
 
-let array = [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 0, 0];
+let array = [
+  -10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0,
+  0, 0,
+];
 document.getElementById("arreglo").innerHTML = array;
 
-function contador(array){
+function contador(array) {
   let ceros = 0;
   let positivos = 0;
   let negativos = 0;
@@ -142,58 +149,67 @@ function contador(array){
     }
   }
 
-  document.getElementById("respejer3").innerHTML = "Hay " + ceros + " ceros, " + positivos + " positivos y " + negativos + " negativos";
-
+  document.getElementById("respejer3").innerHTML =
+    "Hay " +
+    ceros +
+    " ceros, " +
+    positivos +
+    " positivos y " +
+    negativos +
+    " negativos";
 }
 
 contador(array);
 
-
-
 /*ingresar una matriz y sacar promedio por renglon*/
-let matriz = [[1,2,3,4,5],[6,7,8,9,10],[11,12,13,14,15],[16,17,18,19,20]];
+let matriz = [
+  [1, 2, 3, 4, 5],
+  [6, 7, 8, 9, 10],
+  [11, 12, 13, 14, 15],
+  [16, 17, 18, 19, 20],
+];
 document.getElementById("matr").innerHTML = "La matriz es: " + matriz + "<br>";
-function ej4(matriz){
-let promedio = 0;
-let acumulador = 0;
-let contador = 0;
-for (let i = 0; i < matriz.length; i++) {
-  for (let j = 0; j < matriz[i].length; j++) {
-    acumulador += matriz[i][j];
-    contador++;
+function ej4(matriz) {
+  let promedio = 0;
+  let acumulador = 0;
+  let contador = 0;
+  for (let i = 0; i < matriz.length; i++) {
+    for (let j = 0; j < matriz[i].length; j++) {
+      acumulador += matriz[i][j];
+      contador++;
+    }
+    promedio = acumulador / contador;
+    document.getElementById("respejer4.1").innerHTML +=
+      "El renglón " + (i + 1) + " es " + matriz[i] + "<br>";
+    document.getElementById("respejer4").innerHTML +=
+      "El promedio del renglón " + (i + 1) + " es " + promedio + "<br>";
+    acumulador = 0;
+    contador = 0;
+    promedio = 0;
   }
-  promedio = acumulador/contador;
-  document.getElementById("respejer4.1").innerHTML += "El renglón " + (i+1) + " es " + matriz[i] + "<br>";
-  document.getElementById("respejer4").innerHTML += "El promedio del renglón " + (i+1) + " es " + promedio + "<br>";
-  acumulador = 0;
-  contador = 0;
-  promedio = 0;
-}
 }
 ej4(matriz);
 
-
-
-function numReverse(){
+function numReverse() {
   let num = document.getElementById("numRev").value;
   let reverse = num.split("").reverse().join("");
-  document.getElementById("respejer5").innerHTML = "El número " + num + " al revés es " + reverse;
+  document.getElementById("respejer5").innerHTML =
+    "El número " + num + " al revés es " + reverse;
 }
 
 numReverse();
 
-
 document.getElementById("boton1").onclick = (e) => {
   e.preventDefault();
   sqcubes();
-}
+};
 
 document.getElementById("boton2").onclick = (e) => {
   e.preventDefault();
-  ej2(r1,r2);
-}
+  ej2(r1, r2);
+};
 
 document.getElementById("boton5").onclick = (e) => {
   e.preventDefault();
   numReverse();
-}
+};
