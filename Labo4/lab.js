@@ -195,7 +195,7 @@ function numReverse() {
   let reverse = num.split("").reverse().join("");
   document.getElementById("respejer5").innerHTML =
     "El número " + num + " al revés es " + reverse;
-}
+};
 
 numReverse();
 
@@ -212,4 +212,44 @@ document.getElementById("boton2").onclick = (e) => {
 document.getElementById("boton5").onclick = (e) => {
   e.preventDefault();
   numReverse();
+};
+
+
+/*ejercicio 6, calculadora de pasteles*/
+
+function opcionmenu(producto) {
+  let opmenu= document.getElementById("opcionmenu").value;
+  producto.calcularPrecio();
+  if (opmenu == 1) {
+    document.getElementById("respejer6").innerHTML = "El precio del pastel es: " + producto.precio;
+  } 
+  else if (opmenu == 2) {
+    document.getElementById("respejer6").innerHTML = producto.mostrarOrden();
+  }
+
+  else{
+    document.getElementById("respejer6").innerHTML =
+      "No ingresaste una opción válida";
+  }
+};
+class Producto{
+  constructor() {
+    this.sabor = document.getElementById("sabor").value;
+    this.porciones = document.getElementById("porciones").value;
+    this.constante = document.getElementById("constante").value;
+  }
+  calcularPrecio() {
+    this.precio = this.porciones * this.constante;
+  }
+  mostrarOrden() {
+    this.calcularPrecio();
+  return "La orden es:  Sabor: " + this.sabor + ", porciones: " + this.porciones + " y el costo: $" + this.precio;
+  }
+}
+
+
+document.getElementById("boton6").onclick = (e) => {
+  e.preventDefault();
+  let producto = new Producto();
+  opcionmenu(producto);
 };
