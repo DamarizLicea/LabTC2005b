@@ -15,7 +15,7 @@ for (let item of array) {
 }
 
 setTimeout(() => console.log("ya te hackié"), 15000);
-
+/*
 const http = require("http");
 const server = http.createServer((request, response) => {
   console.log(request.url);
@@ -24,7 +24,7 @@ const server = http.createServer((request, response) => {
   response.end();
 });
 
-server.listen(3000);
+server.listen(3000);*/
 
 //Puerto es el numero de departamento
 
@@ -61,3 +61,14 @@ function numReverse() {
   );
 }
 numReverse(srt1);
+
+//Crea una pequeña aplicación web que al enviar una petición al servidor, devuelva una de las páginas de html
+
+const http = require("http");
+const server = http.createServer((request, response) => {
+  console.log(request.url);
+  response.setHeader("Content-Type", "text/html");
+  response.write(archive.html);
+  response.end();
+});
+server.listen(3000);
