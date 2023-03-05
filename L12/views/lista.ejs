@@ -1,0 +1,40 @@
+<%- include('includes/head.ejs') %> <% if (keikiz.length > 0) { %>
+<div class="columns is-multiline">
+  <% for (let keiki of keikiz) { %>
+  <div class="column is-3">
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <img src="<%= keiki.imagen %>" alt="Placeholder image" />
+        </figure>
+      </div>
+      <div class="card-content">
+        <div class="media">
+          <div class="media-left">
+            <figure class="image is-48x48">
+              <img src="<%= keiki.imagen %>" alt="Placeholder image" />
+            </figure>
+          </div>
+          <div class="media-content">
+            <p class="title is-4"><%= keiki.nombre %></p>
+            <p class="subtitle is-6">
+              <%= keiki.handle %> $<%= keiki.precio %>
+            </p>
+          </div>
+        </div>
+
+        <div class="content">
+          <%= keiki.descripcion %>
+          <br />
+          Ingredientes:
+          <br />
+          <%= keiki.ingredientes %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% } %>
+</div>
+<% } else { %>
+<h1>No hay keikiz disponibles</h1>
+<% } %> <%- include('includes/foot.ejs') %>
