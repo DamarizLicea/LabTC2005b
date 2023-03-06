@@ -1,0 +1,7 @@
+¿Qué otros templating engines existen para node?
+Pug: sintaxis simple y concisa,capacidad para generar HTML legible y fácil de entender.
+
+Handlebars:permite crear plantillas reutilizables y modulares, sintaxis fácil de aprender y usar.
+Mustache: minimalista con sintaxis simple y funciona con una amplia variedad de lenguajes de programación.
+
+Nunjucks: ofrece características avanzadas como herencia de plantillas, bloques y macros.
