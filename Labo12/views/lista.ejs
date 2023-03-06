@@ -1,4 +1,12 @@
-<%- include('includes/head.ejs') %> <% if (hot_cakes.length > 0) { %>
+<%- include('includes/head.ejs') %>
+
+<h1 class="title">Menú</h1>
+
+<a href="/hot_cakes/nuevo" class="button is-link is-rounded">Registrar</a>
+
+<br /><br />
+
+<% if (hot_cakes.length > 0) { %>
 <div class="columns is-multiline">
   <% for (let hot_cake of hot_cakes) { %>
   <div class="column is-3">
@@ -37,4 +45,10 @@
 </div>
 <% } else { %>
 <h1>No hay hot cakes >:(</h1>
-<% } %> <%- include('includes/foot.ejs') %>
+<% } %>
+
+<br /><br />
+
+<a href="/hot_cakes/nuevo" class="button is-link is-rounded">Registrar</a>
+
+<%- include('includes/foot.ejs') %>
