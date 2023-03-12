@@ -1,0 +1,25 @@
+<%- include('partials/navbar.ejs') %>
+
+<h1 class="title">PLAYLIST PARA PROGRAMAR</h1>
+
+<br /><br />
+
+<% if (canciones.length > 0) { for (let i = 0; i < canciones.length; i++) { %>
+<div class="card" style="width: 18rem">
+  <img src="<%= canciones[i].imagen %>" class="card-img-top" alt="..." />
+  <div class="card-body">
+    <h5 class="card-title"><%=canciones[i].titulo %></h5>
+    <p class="card-text"><%=canciones[i].description %></p>
+  </div>
+</div>
+<% }} %>
+
+<br /><br />
+
+<a href="/canciones/agregar" class="btn btn-secondary">Agregar nueva canción</a>
+
+<br />
+<br />
+<br />
+<br />
+<p>La ultima cancion guardada fue: <%= ultima %></p>

@@ -1,0 +1,36 @@
+<%- include('partials/navbar.ejs') %>
+<h1>Agrega una nueva canción a la playlist:</h1>
+<form action="/canciones/agregar" method="POST">
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Titulo: </label>
+    <input
+      name="titulo"
+      type="text"
+      class="form-control"
+      id="exampleFormControlInput1"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label"
+      >Descripción prrona:
+    </label>
+    <textarea
+      name="description"
+      class="form-control"
+      id="exampleFormControlTextarea1"
+      rows="3"
+    ></textarea>
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label"
+      >Link de la imagen:
+    </label>
+    <textarea
+      name="imagen"
+      class="form-control"
+      id="exampleFormControlTextarea1"
+      rows="3"
+    ></textarea>
+  </div>
+  <button class="btn btn-secondary">Enviar</button>
+</form>
