@@ -53,10 +53,15 @@
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
-              <a class="button is-primary">
+              <% if(!isLoggedIn) { %>
+              <a href="/users/signup" class="button is-primary">
                 <strong>Sign up</strong>
               </a>
-              <a class="button is-light"> Log in </a>
+              <a href="/users/login" class="button is-light"> Log in </a>
+              <% } %> <% if(isLoggedIn) { %>
+              <span class="navbar-item">Hola <%= nombre %> | </span>
+              <a href="/users/logout" class="button is-danger"> Salir </a>
+              <% } %>
             </div>
           </div>
         </div>

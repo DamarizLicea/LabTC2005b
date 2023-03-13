@@ -5,6 +5,8 @@ const router = express.Router();
 
 const hot_cakesController = require("../controllers/hot_cakes.controller");
 
+router.get("/lista/:id", hot_cakesController.get_lista);
+
 router.get("/lista", hot_cakesController.get_lista);
 
 router.get("/nuevo", hot_cakesController.get_nuevo);

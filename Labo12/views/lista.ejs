@@ -49,6 +49,12 @@
 
 <br /><br />
 
+<% if (ultimo_hot_cake != '') { %>
+<div class="notification is-link is-light">
+  El último hot cake registrado fue: <%= ultimo_hot_cake %>
+</div>
+<% } %>
+
 <a href="/hot_cakes/nuevo" class="button is-link is-rounded">Registrar</a>
 
 <%- include('includes/foot.ejs') %>
