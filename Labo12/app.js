@@ -1,7 +1,9 @@
 const express = require("express");
-const session = require("express-session");
 const bodyParser = require("body-parser");
 const path = require("path");
+const session = require("express-session");
+const csrf = require("csurf");
+const isAuth = require("./util/is-auth");
 
 const app = express();
 
@@ -21,6 +23,9 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
+const csrfProtection = csrf();
+app.use(csrfProtection);
+
 //Middleware
 app.use((request, response, next) => {
   console.log("Middleware!");
@@ -33,9 +38,13 @@ app.use("/home", (request, response, next) => {
   response.send("Bienvenido a casa!");
 });
 
+const rutasUsers = require("./routes/users.routes");
+
+app.use("/users", rutasUsers);
+
 const hotcakesRutas = require("./routes/hot_cakes.routes");
 
-app.use("/hot_cakes", hotcakesRutas);
+app.use("/hot_cakes", isAuth, hotcakesRutas);
 
 app.use((request, response, next) => {
   console.log("Otro middleware!");
