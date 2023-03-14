@@ -2,7 +2,9 @@
 
 <h1 class="title">Menú</h1>
 
+<% if(privilegios.indexOf('crear_hotcakes') >= 0) { %>
 <a href="/hot_cakes/nuevo" class="button is-link is-rounded">Registrar</a>
+<% } %>
 
 <br /><br />
 
@@ -53,8 +55,6 @@
 <div class="notification is-link is-light">
   El último hot cake registrado fue: <%= ultimo_hot_cake %>
 </div>
-<% } %>
-
+<% } %> <% if(privilegios.indexOf('crear_hotcakes') >= 0) { %>
 <a href="/hot_cakes/nuevo" class="button is-link is-rounded">Registrar</a>
-
-<%- include('includes/foot.ejs') %>
+<% } %> <%- include('includes/foot.ejs') %>

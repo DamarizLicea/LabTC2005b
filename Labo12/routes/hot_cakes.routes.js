@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+const hasCreate = require("../util/has-create");
 
 const router = express.Router();
 
@@ -9,9 +10,9 @@ router.get("/lista/:id", hot_cakesController.get_lista);
 
 router.get("/lista", hot_cakesController.get_lista);
 
-router.get("/nuevo", hot_cakesController.get_nuevo);
+router.get("/nuevo", hasCreate, hot_cakesController.get_nuevo);
 
-router.post("/nuevo", hot_cakesController.post_nuevo);
+router.post("/nuevo", hasCreate, hot_cakesController.post_nuevo);
 
 router.get("/pedir", hot_cakesController.get_pedir);
 
