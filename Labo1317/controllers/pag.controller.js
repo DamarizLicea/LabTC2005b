@@ -6,13 +6,20 @@ exports.get_home = (req, res, next) => {
       res.render("home", {
         canciones: rows,
         ultima: req.cookies.ultima,
+        isLoggedIn: req.session.isLoggedIn || false,
+        nombre: req.session.nombre || "",
+        privilegios: req.session.privilegios || [],
       });
     })
     .catch((err) => console.log(err));
 };
 
 exports.get_agregar = (req, res, next) => {
-  res.render("forms");
+  res.render("forms", {
+    isLoggedIn: req.session.isLoggedIn || false,
+    nombre: req.session.nombre || "",
+    crsfToken: req.csrfToken(),
+  });
 };
 exports.post_agregar = (req, res, next) => {
   res.setHeader(

@@ -6,6 +6,8 @@ const router = express.Router();
 
 const hot_cakesController = require("../controllers/hot_cakes.controller");
 
+router.get("/buscar/:valor_busqueda", hot_cakesController.get_buscar);
+
 router.get("/lista/:id", hot_cakesController.get_lista);
 
 router.get("/lista", hot_cakesController.get_lista);

@@ -1,5 +1,16 @@
 const HotCake = require("../models/hot_cakes.model");
 
+exports.get_buscar = (request, response, next) => {
+  HotCake.find(request.params.valor_busqueda)
+    .then(([rows, fieldData]) => {
+      response.status(200).json({ hot_cakes: rows });
+    })
+    .catch((error) => {
+      console.log(error);
+      response.status(500).json({ message: "Internal Server Error" });
+    });
+};
+
 exports.get_lista = (request, response, next) => {
   const cookies = request.get("Cookie") || "";
 
@@ -39,12 +50,15 @@ exports.get_nuevo = (request, response, next) => {
 };
 
 exports.post_nuevo = (request, response, next) => {
+  console.log(request.file);
+
   const hot_cake = new HotCake({
     nombre: request.body.nombre,
     descripcion: request.body.descripcion,
     handle: request.body.handle,
     ingredientes: request.body.ingredientes,
     precio: request.body.precio,
+    imagen: request.file.filename,
   });
 
   hot_cake

@@ -1,0 +1,5 @@
+¿Qué beneficios encuentras en el estilo MVC?
+Permite que el desarrollo esté estructurado de mejores maneras, y la programación en capas, facilita el mantenimiento del sistema, 
+
+¿Encuentras alguna desventaja en el estilo arquitectónico MVC?
+Agrega más archivos a los cuales darles mantenimiento, además de mayor complejidad al sistema.
